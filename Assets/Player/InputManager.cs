@@ -22,6 +22,7 @@ public class InputManager : MonoBehaviour
         groundMovement = controls.GroundMovement;
         // groundMovement.[action].performed += context => do something
         groundMovement.HorizontalMovement.performed += context => horizontalInput = context.ReadValue<Vector2>();
+        groundMovement.Jump.performed += _ => movement.onJumpPressed();
     }
     
     private void OnEnable() 
