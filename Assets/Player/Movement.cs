@@ -12,6 +12,14 @@ public class Movement : MonoBehaviour
     [SerializeField] float speed = 11f;
 
     Vector2 horizontalInput;
+    
+    //the gravity should be -9.8 but for a snapier result we used -30
+    [SerializeField] float gravity = - 30f; 
+    Vector3 verticalVelocity = Vector3.zero;
+
+    [SerializeField] LayerMask groundMask;
+    bool isGrounded;
+
 
     //methods
     public void ReceiveInput (Vector2 aHorizontalInput) 
@@ -31,8 +39,19 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        isGrounded = Physics.CheckSphere(transform.position, 0.1f , groundMask);
+
+        if(isGrounded == true)
+        {
+            verticalVelocity.y = 0;
+        }
+
         Vector3 horizontalVelocity = (transform.right * horizontalInput.x
                                      + transform.forward *horizontalInput.y) * speed;
         controller.Move(horizontalVelocity * Time.deltaTime);
+
+        verticalVelocity.y += gravity  *  Time.deltaTime;
+        controller.Move(verticalVelocity * Time.deltaTime);
+
     }
 }
