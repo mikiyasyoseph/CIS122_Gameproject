@@ -241,6 +241,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 330180903}
   speed: 11
+<<<<<<< HEAD
+=======
+  jumpHeight: 3.5
+>>>>>>> parent of 4df6893 (Revert "Merge branch 'main' of https://github.com/mikiyasyoseph/CIS122_Gameproject")
   gravity: -30
   groundMask:
     serializedVersion: 2
@@ -257,6 +261,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab10e823699640378b37b7460f8fd14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+=======
+  sensitivityX: 8
+  sensitivityY: 0.5
+  playerCamera: {fileID: 54573823}
+  xClamp: 85
+>>>>>>> parent of 4df6893 (Revert "Merge branch 'main' of https://github.com/mikiyasyoseph/CIS122_Gameproject")
 --- !u!114 &330180902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,6 +281,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {fileID: 330180900}
+<<<<<<< HEAD
+=======
+  mouseLook: {fileID: 330180901}
+>>>>>>> parent of 4df6893 (Revert "Merge branch 'main' of https://github.com/mikiyasyoseph/CIS122_Gameproject")
 --- !u!143 &330180903
 CharacterController:
   m_ObjectHideFlags: 0
