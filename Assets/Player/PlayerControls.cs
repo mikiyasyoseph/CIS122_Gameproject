@@ -44,24 +44,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""MouseX"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""2d561830-9701-48a6-ab0b-681c8b673a68"",
-                    ""expectedControlType"": ""Axis"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""MouseY"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""a51fef69-a79a-4edd-9b67-403cdce29289"",
-                    ""expectedControlType"": ""Axis"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -130,28 +112,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""2a567584-fc70-490e-87ab-e61543aff2f6"",
-                    ""path"": ""<Mouse>/delta/x"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MouseX"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""51742158-2671-40ce-8504-be5caf1f3a9d"",
-                    ""path"": ""<Mouse>/delta/y"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MouseY"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -162,8 +122,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_GroundMovement = asset.FindActionMap("GroundMovement", throwIfNotFound: true);
         m_GroundMovement_HorizontalMovement = m_GroundMovement.FindAction("HorizontalMovement", throwIfNotFound: true);
         m_GroundMovement_Jump = m_GroundMovement.FindAction("Jump", throwIfNotFound: true);
-        m_GroundMovement_MouseX = m_GroundMovement.FindAction("MouseX", throwIfNotFound: true);
-        m_GroundMovement_MouseY = m_GroundMovement.FindAction("MouseY", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -225,16 +183,12 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private IGroundMovementActions m_GroundMovementActionsCallbackInterface;
     private readonly InputAction m_GroundMovement_HorizontalMovement;
     private readonly InputAction m_GroundMovement_Jump;
-    private readonly InputAction m_GroundMovement_MouseX;
-    private readonly InputAction m_GroundMovement_MouseY;
     public struct GroundMovementActions
     {
         private @PlayerControls m_Wrapper;
         public GroundMovementActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @HorizontalMovement => m_Wrapper.m_GroundMovement_HorizontalMovement;
         public InputAction @Jump => m_Wrapper.m_GroundMovement_Jump;
-        public InputAction @MouseX => m_Wrapper.m_GroundMovement_MouseX;
-        public InputAction @MouseY => m_Wrapper.m_GroundMovement_MouseY;
         public InputActionMap Get() { return m_Wrapper.m_GroundMovement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -250,12 +204,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Jump.started -= m_Wrapper.m_GroundMovementActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_GroundMovementActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_GroundMovementActionsCallbackInterface.OnJump;
-                @MouseX.started -= m_Wrapper.m_GroundMovementActionsCallbackInterface.OnMouseX;
-                @MouseX.performed -= m_Wrapper.m_GroundMovementActionsCallbackInterface.OnMouseX;
-                @MouseX.canceled -= m_Wrapper.m_GroundMovementActionsCallbackInterface.OnMouseX;
-                @MouseY.started -= m_Wrapper.m_GroundMovementActionsCallbackInterface.OnMouseY;
-                @MouseY.performed -= m_Wrapper.m_GroundMovementActionsCallbackInterface.OnMouseY;
-                @MouseY.canceled -= m_Wrapper.m_GroundMovementActionsCallbackInterface.OnMouseY;
             }
             m_Wrapper.m_GroundMovementActionsCallbackInterface = instance;
             if (instance != null)
@@ -266,12 +214,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
-                @MouseX.started += instance.OnMouseX;
-                @MouseX.performed += instance.OnMouseX;
-                @MouseX.canceled += instance.OnMouseX;
-                @MouseY.started += instance.OnMouseY;
-                @MouseY.performed += instance.OnMouseY;
-                @MouseY.canceled += instance.OnMouseY;
             }
         }
     }
@@ -280,7 +222,5 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     {
         void OnHorizontalMovement(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
-        void OnMouseX(InputAction.CallbackContext context);
-        void OnMouseY(InputAction.CallbackContext context);
     }
 }
