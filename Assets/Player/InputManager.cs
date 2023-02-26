@@ -24,16 +24,12 @@ public class InputManager : MonoBehaviour
         groundMovement = controls.GroundMovement;
         // groundMovement.[action].performed += context => do something
         groundMovement.HorizontalMovement.performed += context => horizontalInput = context.ReadValue<Vector2>();
-<<<<<<< HEAD
-        groundMovement.Jump.performed += _ => movement.onJumpPressed();
-=======
 
         groundMovement.Jump.performed += _ => movement.onJumpPressed();
 
         groundMovement.MouseX.performed += context => mouseInput.x = context.ReadValue<float>();
         groundMovement.MouseY.performed += context => mouseInput.y = context.ReadValue<float>();
 
->>>>>>> parent of 4df6893 (Revert "Merge branch 'main' of https://github.com/mikiyasyoseph/CIS122_Gameproject")
     }
     
     private void OnEnable() 
