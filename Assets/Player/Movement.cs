@@ -26,7 +26,6 @@ public class Movement : MonoBehaviour
     {
         horizontalInput = aHorizontalInput;
         print(horizontalInput);
-
     }
 
 
