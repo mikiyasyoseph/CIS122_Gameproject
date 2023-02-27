@@ -25,4 +25,5 @@ public class PlayerMovementScript : MonoBehaviour
 
         controller.Move(velocity * Time.deltaTime);
     }
+    
 }

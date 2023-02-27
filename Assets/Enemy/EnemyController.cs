@@ -1,3 +1,5 @@
+//written by Mikiyas
+// 2/26/23
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +9,7 @@ public class EnemyController : MonoBehaviour
 {
     //variables
     public NavMeshAgent agent;
-    public Transform target;
+    private Transform target = null;
 
     void start()
     {
@@ -17,6 +19,10 @@ public class EnemyController : MonoBehaviour
 
     private void Update()
     {
+        //refrence to find location of player every update(only temporary until integration with map)
+        GameObject go = GameObject.FindGameObjectWithTag("Player");
+        target = go.transform;
+
         //calling the move to target method every frame update to make enemy move
         MoveToTarget();
     }
