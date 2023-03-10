@@ -23,14 +23,13 @@ public class Press_Space_to_Fire : MonoBehaviour
     {
         if (Input.GetKeyDown("space"))
         {
-            
             //The Bullet instantiation happens here.
             GameObject Temporary_Bullet_Handler;
             Temporary_Bullet_Handler = Instantiate(Bullet, Bullet_Emitter.transform.position, Bullet_Emitter.transform.rotation) as GameObject;
 
             //Sometimes bullets may appear rotated incorrectly due to the way its pivot was set from the original modeling package.
             //This is EASILY corrected here, you might have to rotate it from a different axis and or angle based on your particular mesh.
-            Temporary_Bullet_Handler.transform.Rotate(Vector3.right * 90);
+            Temporary_Bullet_Handler.transform.Rotate(Vector3.left * 90);
 
             //Retrieve the Rigidbody component from the instantiated Bullet and control it.
             Rigidbody Temporary_RigidBody;

@@ -1,8 +1,11 @@
+//Niftalem Kassa
+//3/10/2023
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-
+//This code is a common class used by many other scripts for healthSystems.
 public class HealthSystem
 {
     public event EventHandler OnDead;
