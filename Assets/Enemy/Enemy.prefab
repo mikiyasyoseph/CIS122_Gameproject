@@ -277,7 +277,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 1207052679265588503}
-  target: {fileID: 805141115740809884, guid: 148e45e61158224438439af6e847c6dc, type: 3}
 --- !u!1 &1207052679454866975
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,7 +882,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: d294daa83e32a644889b501d7b7c8277, type: 3}
+  - {fileID: 2100000, guid: da916e470a5fd634299871fe4a3fbd4a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
