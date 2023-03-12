@@ -9,6 +9,9 @@ using UnityEngine;
 public class PlayerShoot : MonoBehaviour
 {
     public static Action shootInput;
+    public static Action reloadInput;
+
+    [SerializeField] private KeyCode reloadKey;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +25,10 @@ public class PlayerShoot : MonoBehaviour
         if (Input.GetMouseButton (0))
         {
             shootInput?. Invoke () ;
+        }
+        if (Input. GetKeyDown (reloadKey))
+        {
+            reloadInput?. Invoke();
         }
         
     }
