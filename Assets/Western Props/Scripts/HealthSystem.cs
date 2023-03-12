@@ -24,6 +24,10 @@ public class HealthSystem
     public void Damage(int damageAmount)
     {
         health -= damageAmount;
+        //added these two
+        if (health < 0) health= 0;
+        if (OnDead!= null && health == 0) OnDead(this, EventArgs.Empty);
+
     }
    public void Heal(int healAmount)
     {

@@ -21,7 +21,7 @@ public class Press_Space_to_Fire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("k"))
         {
             //The Bullet instantiation happens here.
             GameObject Temporary_Bullet_Handler;
@@ -40,6 +40,9 @@ public class Press_Space_to_Fire : MonoBehaviour
 
             //Basic Clean Up, set the Bullets to self destruct after 10 Seconds, I am being VERY generous here, normally 3 seconds is plenty.
             Destroy(Temporary_Bullet_Handler, 3.0f);
+
+            Debug.Log("works");
+
         }
     }
 }

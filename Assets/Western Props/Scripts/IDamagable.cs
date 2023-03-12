@@ -6,5 +6,5 @@ using UnityEngine;
 
 public interface IDamagable
 {
-    void Damage (int damageAmount, Vector3 damagePosition);
+    void Damage(int damageAmount);//, Vector3 damagePosition);
 }
