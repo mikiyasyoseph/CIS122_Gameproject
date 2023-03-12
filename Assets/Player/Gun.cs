@@ -1,6 +1,7 @@
 // Written by Hemron
 // Sat Mar 11 2023
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,7 +26,7 @@ public class Gun : MonoBehaviour
     {
         gunData.reloading = true;
         
-        yield return new WaitForSeconds (gunData. reloadTime) ;
+        yield return new WaitForSeconds (gunData.reloadTime) ;
         
         gunData.currentAmmo = gunData. magSize;
         
@@ -42,7 +43,8 @@ public class Gun : MonoBehaviour
             {
                 if (Physics.Raycast (muzzle.position, transform. forward, out RaycastHit hitInfo, gunData.maxDistance))
                 {
-                    Debug. Log (hitInfo. transform. name) ;
+                    IDamageable damageable = hitInfo. transform. GetComponent<IDamageable> () ;
+                    damageable?. TakeDamage (gunData. damage);
                 }
                 gunData. currentAmmo--;
                 timeSinceLastShot = 0;
