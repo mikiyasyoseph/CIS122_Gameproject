@@ -17,8 +17,7 @@ public class EnemyController : MonoBehaviour, IDamagable
 
     void start()
     {
-        //refrence to navmesh agent
-        
+        //instance of health system with health amount 20        
         healthSystem = new HealthSystem(20);
         
     }
@@ -52,7 +51,13 @@ public class EnemyController : MonoBehaviour, IDamagable
         {
             //if true rotates the enemy head to look at face player
             transform.LookAt(target);
-            AnimationChanger();
+            //gives true condition to animator to start attack
+            anim.SetBool("New Bool", true);
+        }
+        else 
+        {
+            //give false condition to stop attack animation
+            anim.SetBool("New Bool", false);
         }
     }
     //called when enemy takes damage
