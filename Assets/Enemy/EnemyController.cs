@@ -5,15 +5,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyController : MonoBehaviour
+public class EnemyController : MonoBehaviour, IDamagable
 {
+    [SerializeField] public Animator anim;
+    public HealthSystem healthSystem;
+    private Animator myAnimator;
     //variables
     public NavMeshAgent agent;
     private Transform target = null;
 
+
     void start()
     {
         //refrence to navmesh agent
+        
+        healthSystem = new HealthSystem(20);
+        
+    }
+    void awake()
+    {
+        //refrence to navmesh
         agent = GetComponent<NavMeshAgent>();
     }
 
@@ -41,6 +52,18 @@ public class EnemyController : MonoBehaviour
         {
             //if true rotates the enemy head to look at face player
             transform.LookAt(target);
+            AnimationChanger();
         }
+    }
+    //called when enemy takes damage
+    public void Damage(int damageAmount)
+    {
+        healthSystem.Damage(damageAmount);
+    }
+
+    //start attack animation
+    public void AnimationChanger()
+    {
+        anim.SetBool("New Bool", true);
     }
 }
