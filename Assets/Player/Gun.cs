@@ -56,6 +56,11 @@ public class Gun : MonoBehaviour
     {
         
     }
+    private void Awake()
+    {
+        //make sure magazine is full
+        gunData.currentAmmo = gunData. magSize;
+    }
 
     // Start is called before the first frame update
     void Start()
