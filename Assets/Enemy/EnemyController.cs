@@ -35,6 +35,10 @@ public class EnemyController : MonoBehaviour, IDamagable
 
         //calling the move to target method every frame update to make enemy move
         MoveToTarget();
+
+
+
+       
     }
 
     //function that makes the enemy move to the player
@@ -71,4 +75,6 @@ public class EnemyController : MonoBehaviour, IDamagable
     {
         anim.SetBool("New Bool", true);
     }
+
+
 }
