@@ -12,6 +12,7 @@ public class Press_Space_to_Fire : MonoBehaviour
     //Enter the Speed of the Bullet from the Component Inspector.
     public float Bullet_Forward_Force;
 
+    private GameObject Spawned;
     // Use this for initialization
     void Start()
     {
@@ -21,6 +22,19 @@ public class Press_Space_to_Fire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        /*
+        Spawned = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyController>();
+        if (Spawned)
+        {
+            if (Input.GetKeyDown("e"))
+            {
+                Spawned.Damage(50);
+            }
+        }*/
+        
+        
+
         if (Input.GetKeyDown("k"))
         {
             //The Bullet instantiation happens here.
@@ -42,6 +56,7 @@ public class Press_Space_to_Fire : MonoBehaviour
             Destroy(Temporary_Bullet_Handler, 3.0f);
 
             Debug.Log("works");
+
 
         }
     }
