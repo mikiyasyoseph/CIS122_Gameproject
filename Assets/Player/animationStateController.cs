@@ -61,7 +61,16 @@ public class animationStateController : MonoBehaviour
             // then set the isRuning boole to true
             animator. SetBool("isStrafingRight", false);
         }
-        
+        if (Input.GetKey (KeyCode.Space))
+        {
+            // then set the isRuning boole to true
+            animator. SetBool("isJumping", true);
+        }
+        if (!Input.GetKey (KeyCode.Space))
+        {
+            // then set the isRuning boole to true
+            animator. SetBool("isJumping", false);
+        }
         
     }
 }
