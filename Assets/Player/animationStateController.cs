@@ -23,12 +23,12 @@ public class animationStateController : MonoBehaviour
         if (Input.GetKey ("a"))
         {
             // then set the isRuning boole to true
-            animator. SetBool("isMovingLeft ", true);
+            animator. SetBool("isStrafingLeft", true);
         }
         if (!Input.GetKey ("a"))
         {
             // then set the isRuning boole to true
-            animator. SetBool("isMovingLeft", false);
+            animator. SetBool("isStrafingLeft", false);
         }
         
         if (Input.GetKey ("w"))
@@ -62,15 +62,6 @@ public class animationStateController : MonoBehaviour
             animator. SetBool("isStrafingRight", false);
         }
         
-        if (Input.GetKey (" "))
-        {
-            // then set the isRuning boole to true
-            animator. SetBool("isJumping", true);
-        }
-        if (!Input.GetKey (" "))
-        {
-            // then set the isRuning boole to true
-            animator. SetBool("isJumping", false);
-        }
+        
     }
 }
