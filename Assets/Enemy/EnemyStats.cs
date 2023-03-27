@@ -16,6 +16,7 @@ public class EnemyStats : MonoBehaviour
         if(health <= 0)
         {
             health= 0;
+            Die();
         }
         if(health >= maxHealth) 
         {

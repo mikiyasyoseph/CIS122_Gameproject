@@ -35,7 +35,7 @@ public class Press_Space_to_Fire : MonoBehaviour
         
         
 
-        if (Input.GetKeyDown("k"))
+        if (Input.GetKeyDown("f"))
         {
             //The Bullet instantiation happens here.
             GameObject Temporary_Bullet_Handler;

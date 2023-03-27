@@ -20,7 +20,7 @@ public class SkeletonStats : EnemyStats
     }
     public override void InitVariables()
     {
-        maxHealth = 50;
+        maxHealth = 100;
         SetHealthTo(maxHealth);
     }
 }
