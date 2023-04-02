@@ -296,6 +296,7 @@ GameObject:
   m_Component:
   - component: {fileID: 285655390}
   - component: {fileID: 285655391}
+  - component: {fileID: 285655392}
   m_Layer: 0
   m_Name: Assault Rifle
   m_TagString: Untagged
@@ -334,6 +335,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunData: {fileID: 11400000, guid: 7443ff574960c4e8bb65508785c3c471, type: 2}
   muzzle: {fileID: 168762743}
+--- !u!95 &285655392
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285655389}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4b4c23035c57842118076e62f00098f4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &330180899
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,6 +370,7 @@ GameObject:
   - component: {fileID: 330180900}
   - component: {fileID: 330180905}
   - component: {fileID: 330180906}
+  - component: {fileID: 330180907}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -471,6 +493,19 @@ MonoBehaviour:
     Renderers: []
     Materials: []
     SubObjects: []
+--- !u!114 &330180907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330180899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf40fc5f2bb3d4e6cadaede0edf2b389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Gun: {fileID: 285655389}
 --- !u!1 &341646597
 GameObject:
   m_ObjectHideFlags: 0
