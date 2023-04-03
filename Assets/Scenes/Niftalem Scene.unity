@@ -136,7 +136,6 @@ GameObject:
   - component: {fileID: 18743756}
   - component: {fileID: 18743755}
   - component: {fileID: 18743754}
-  - component: {fileID: 18743753}
   m_Layer: 0
   m_Name: Elevator (1)
   m_TagString: Untagged
@@ -144,19 +143,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &18743753
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 18743752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa13716ff067c5d4e95d799d77a522b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 1
 --- !u!95 &18743754
 Animator:
   serializedVersion: 5
@@ -508,7 +494,6 @@ GameObject:
   - component: {fileID: 33281160}
   - component: {fileID: 33281159}
   - component: {fileID: 33281158}
-  - component: {fileID: 33281157}
   m_Layer: 0
   m_Name: Elevator (3)
   m_TagString: Untagged
@@ -516,19 +501,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &33281157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 33281156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa13716ff067c5d4e95d799d77a522b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 1
 --- !u!95 &33281158
 Animator:
   serializedVersion: 5
@@ -1006,7 +978,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 439024, guid: 92be89facb85ad94196127a348727246, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.19
+      value: 9.2
       objectReference: {fileID: 0}
     - target: {fileID: 439024, guid: 92be89facb85ad94196127a348727246, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1223,7 +1195,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh27312
+  m_Name: pb_Mesh27230
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1666,7 +1638,6 @@ GameObject:
   - component: {fileID: 269830658}
   - component: {fileID: 269830657}
   - component: {fileID: 269830656}
-  - component: {fileID: 269830655}
   m_Layer: 0
   m_Name: Elevator (2)
   m_TagString: Untagged
@@ -1674,19 +1645,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &269830655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 269830654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa13716ff067c5d4e95d799d77a522b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 1
 --- !u!95 &269830656
 Animator:
   serializedVersion: 5
@@ -6284,7 +6242,6 @@ GameObject:
   - component: {fileID: 627214749}
   - component: {fileID: 627214748}
   - component: {fileID: 627214747}
-  - component: {fileID: 627214746}
   m_Layer: 0
   m_Name: Elevator
   m_TagString: Untagged
@@ -6292,19 +6249,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &627214746
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 627214745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa13716ff067c5d4e95d799d77a522b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 1
 --- !u!95 &627214747
 Animator:
   serializedVersion: 5
@@ -10053,7 +9997,6 @@ GameObject:
   - component: {fileID: 1560451260}
   - component: {fileID: 1560451259}
   - component: {fileID: 1560451261}
-  - component: {fileID: 1560451262}
   m_Layer: 0
   m_Name: FirstPersonPlayer
   m_TagString: Untagged
@@ -10111,30 +10054,13 @@ MonoBehaviour:
   controller: {fileID: 1560451259}
   Speed: 12
   gravity: -9.81
---- !u!114 &1560451262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1560451258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6a8f7c8a841ce14991eab3850e73eab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  up: 100
-  range: 3
-  elevator: {fileID: 0}
-  isRasing: 1
-  fpsCam: {fileID: 2115866686}
 --- !u!43 &1563691936
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh27426
+  m_Name: pb_Mesh27358
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11966,7 +11892,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh27294
+  m_Name: pb_Mesh27212
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
