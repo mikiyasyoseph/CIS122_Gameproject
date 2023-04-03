@@ -28,6 +28,11 @@ public class WeaponShoot : MonoBehaviour
             if(hit.transform.tag == "Enemy")
             {
                 var enemyStats = hit.transform.GetComponent<SkeletonStats>();
+                var enemyControl = hit.transform.GetComponent<EnemyController>();
+                if(enemyStats.Health > 0)
+                {
+                    enemyControl.playHit();
+                }
                 enemyStats.TakeDamage(25);
             }
         }

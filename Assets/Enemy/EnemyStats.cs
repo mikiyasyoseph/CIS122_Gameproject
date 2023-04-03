@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class EnemyStats : MonoBehaviour
 {
-    [SerializeField] protected int health;
+    [SerializeField] private int health;
     [SerializeField] protected int maxHealth;
     [SerializeField] protected bool isDead;
     private void Start()
     {
         InitVariables();
+    }
+    public int Health
+    {
+        get { return this.health; }
     }
     public virtual void CheckHealth()
     {

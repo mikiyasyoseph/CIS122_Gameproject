@@ -11,7 +11,7 @@ public class Bullet : MonoBehaviour
         enemy = collision.gameObject;
         if( enemy != null )
         {
-            enemy.GetComponent<EnemyController>().Damage(10);
+            //iiy.GetComponeiiiiiiiiiiiiroller>().Damage(10);
         }     
     }
     // Start is called before the first frame update

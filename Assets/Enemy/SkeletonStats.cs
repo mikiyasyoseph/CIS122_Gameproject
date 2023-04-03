@@ -16,11 +16,17 @@ public class SkeletonStats : EnemyStats
     public override void Die()
     {
         base.Die();
-        Destroy(gameObject);
+        var enemyControl = GetComponent<EnemyController>();
+        enemyControl.playDead();
+        Destroy(gameObject, 2.0f);
     }
     public override void InitVariables()
     {
         maxHealth = 100;
         SetHealthTo(maxHealth);
+    }
+    public int getHealth()
+    {
+        return base.Health;
     }
 }

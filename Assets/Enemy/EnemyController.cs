@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyController : MonoBehaviour, IDamagable
+public class EnemyController : MonoBehaviour
 {
     [SerializeField] public Animator anim;
     public HealthSystem healthSystem;
@@ -36,8 +36,8 @@ public class EnemyController : MonoBehaviour, IDamagable
         //calling the move to target method every frame update to make enemy move
         MoveToTarget();
 
-
-
+        
+        
        
     }
 
@@ -64,12 +64,15 @@ public class EnemyController : MonoBehaviour, IDamagable
             anim.SetBool("New Bool", false);
         }
     }
-    //called when enemy takes damage
-    public void Damage(int damageAmount)
+    
+    public void playHit()
     {
-        healthSystem.Damage(damageAmount);
+        anim.SetTrigger("Hit");
     }
-
+    public void playDead()
+    {
+        anim.SetTrigger("Dead");
+    }
     //start attack animation
     public void AnimationChanger()
     {
