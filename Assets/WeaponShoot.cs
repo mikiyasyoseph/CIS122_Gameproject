@@ -6,6 +6,7 @@ using UnityEngine.TextCore.Text;
 public class WeaponShoot : MonoBehaviour
 {
    private Camera cam;
+   [SerializeField] private GameObject bloodps;
 
    private void Start()
     {
@@ -34,7 +35,12 @@ public class WeaponShoot : MonoBehaviour
                     enemyControl.playHit();
                 }
                 enemyStats.TakeDamage(25);
+                spawnParticles(hit.point);
             }
         }
+    }
+    private void spawnParticles(Vector3 position)
+    {
+        Instantiate(bloodps, position, new Quaternion(0, 0, 0, 0));
     }
 }
