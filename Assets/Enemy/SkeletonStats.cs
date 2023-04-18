@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SkeletonStats : EnemyStats
 {
-    [SerializeField] private float damage;
+    [SerializeField] private int damage;
     [SerializeField] private float attackSpeed;
 
     [SerializeField] private bool canAttack;

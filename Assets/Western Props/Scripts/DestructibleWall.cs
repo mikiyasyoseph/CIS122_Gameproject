@@ -15,11 +15,11 @@ public class DestructibleWall : MonoBehaviour, IDamagable
 
     void Update()
     {
-        if (Input.GetKeyDown("j"))
-        {
-            healthSystem.Damage(20);
-            Debug.Log(healthSystem.GetHealth());
-        }
+        //if (Input.GetKeyDown("j"))
+        //{
+        //    healthSystem.Damage(20);
+        //    Debug.Log(healthSystem.GetHealth());
+        //}
     }
     private void Awake()
     {

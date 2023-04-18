@@ -13,7 +13,7 @@ public class EnemyController : MonoBehaviour
     //variables
     public NavMeshAgent agent;
     private Transform target = null;
-
+    private DestructibleWall sc;
 
     void start()
     {
@@ -30,9 +30,20 @@ public class EnemyController : MonoBehaviour
     private void Update()
     {
         //refrence to find location of player every update(only temporary until integration with map)
-        GameObject go = GameObject.FindGameObjectWithTag("Player");
-        target = go.transform;
 
+        //GameObject go = GameObject.FindGameObjectWithTag("Player");
+        GameObject go = GameObject.FindGameObjectWithTag("gg");
+
+        if(go != null)
+        {
+            target = go.transform;
+            sc = go.GetComponent<DestructibleWall>();
+        }else if(go == null) 
+        {
+            go = GameObject.FindGameObjectWithTag("Player");
+            target = go.transform;
+        }
+        
         //calling the move to target method every frame update to make enemy move
         MoveToTarget();
 
@@ -57,6 +68,8 @@ public class EnemyController : MonoBehaviour
             transform.LookAt(target);
             //gives true condition to animator to start attack
             anim.SetBool("New Bool", true);
+            
+            sc.Damage(20);
         }
         else 
         {
