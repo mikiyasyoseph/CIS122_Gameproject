@@ -23,7 +23,7 @@ public class DestructibleWall : MonoBehaviour, IDamagable
     }
     private void Awake()
     {
-        healthSystem = new HealthSystem(100);
+        healthSystem = new HealthSystem(500);
         healthSystem.OnDead += HealthSystem_OnDead;
     }
     //This code shows what happens when exploded or dead

@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class EnemyController : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class EnemyController : MonoBehaviour
     public NavMeshAgent agent;
     private Transform target = null;
     private DestructibleWall sc;
+    public GameObject gameOverScreen;
 
     void start()
     {
@@ -26,37 +28,71 @@ public class EnemyController : MonoBehaviour
         //refrence to navmesh
         agent = GetComponent<NavMeshAgent>();
     }
+    public GameObject FindClosestEnemy()
+    {
+        GameObject[] gos;
+        gos = GameObject.FindGameObjectsWithTag("gg");
+        GameObject closest = null;
+        float distance = Mathf.Infinity;
+        Vector3 position = transform.position;
+        foreach (GameObject go in gos)
+        {
+            Vector3 diff = go.transform.position - position;
+            float curDistance = diff.sqrMagnitude;
+            if (curDistance < distance)
+            {
+                closest = go;
+                distance = curDistance;
+            }
+        }
+        return closest;
+    }
 
     private void Update()
     {
         //refrence to find location of player every update(only temporary until integration with map)
 
         //GameObject go = GameObject.FindGameObjectWithTag("Player");
-        GameObject go = GameObject.FindGameObjectWithTag("gg");
-
-        if(go != null)
+        
+        //GameObject go = GameObject.FindGameObjectWithTag("gg");
+        GameObject go = FindClosestEnemy();
+        if (go != null)
         {
             target = go.transform;
             sc = go.GetComponent<DestructibleWall>();
         }else if(go == null) 
         {
-            go = GameObject.FindGameObjectWithTag("Player");
-            target = go.transform;
+            //eneManager.LoadScene(EndScreen);
+            //go = GameObject.FindGameObjectWithTag("Player");
+            //target = go.transform;
+            gameOver();
         }
         
         //calling the move to target method every frame update to make enemy move
-        MoveToTarget();
+        if(go != null) 
+        {
+            MoveToTarget();
+        }
+        
 
         
         
        
+    }
+    public void gameOver()
+    {
+        SceneManager.LoadScene("EndScene");
     }
 
     //function that makes the enemy move to the player
     private void MoveToTarget()
     {
         //giving the navmeshagent the target(players) position
-        agent.SetDestination(target.position);
+        if(target != null)
+        {
+            agent.SetDestination(target.position);
+
+        }
 
         //gets the distance between enemy and player
         float distance = Vector3.Distance(transform.position, target.position);
@@ -68,8 +104,11 @@ public class EnemyController : MonoBehaviour
             transform.LookAt(target);
             //gives true condition to animator to start attack
             anim.SetBool("New Bool", true);
+            if(sc != null)
+            {
+                sc.Damage(1);
+            }
             
-            sc.Damage(20);
         }
         else 
         {

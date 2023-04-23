@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Merge Scene.unity
+    guid: 537113e451e8ef1408c187f60e3784ba
+  - enabled: 1
+    path: Assets/Enemy/EndScene.unity
+    guid: 0099e245b5b19ba4db6bbf7596d6a2f4
   m_configObjects: {}
