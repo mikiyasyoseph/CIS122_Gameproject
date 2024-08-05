@@ -1,13 +1,13 @@
-#CIS122 Game Project: Defend the Castle
+# CIS122 Game Project: Defend the Castle
 
 
 Welcome to the repository for the CIS122 Game Project, where we developed the game "Defend the Castle". This project was created in 2022 as a part of our Data Structures class, focusing on practical implementation and understanding of core concepts in C#. We used the Unity game engine to bring our ideas to life.
 
-#About the Game
+# About the Game
 
 "Defend the Castle" is a tower defense game where players must protect their castle from waves of enemies. The game involves strategic placement of defensive structures and the use of various power-ups to fend off different types of enemies. Players earn points and resources by defeating enemies, which can be used to upgrade their defenses and unlock new abilities.
 
-#Key Features
+# Key Features
 
 Multiple Levels: Progress through different levels, each with increasing difficulty and new challenges.
 Variety of Enemies: Face various types of enemies, each with unique behaviors and strengths.
@@ -20,7 +20,7 @@ Engine: Unity
 Assets: Custom-designed and third-party assets
 
 
-#Installation
+# Installation
 
 
 Clone the Repository:
